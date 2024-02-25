@@ -36,6 +36,25 @@
             //calculator(num, num2, symbol);
             #endregion
 
+            #region Task2
+
+
+            //string word = "!?Necesen!!!!!!!?";
+            
+            //Console.WriteLine(sumOfSymbols(word,alphabet));
+
+
+            #endregion
+
+            #region Task3
+
+            string word = "salam necesen salam necesen";
+
+            Console.WriteLine(sumOfSymbols(word));
+
+
+            #endregion
+
 
         }
         static void calculator(double num, double num2, char symbol)
@@ -67,7 +86,45 @@
             }
         }
 
+        static int sumOfSymbols(string word)
+        {
+            word = word.ToLower();
 
+            char[] alphabet = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+
+            int count = 0;
+
+            foreach (char c in word)
+            {
+                if (alphabet.Contains(c))
+                {
+                    count++;
+                }
+            }
+            count=word.Length - count;
+            return count;
+        }
+
+        static int sumOfWords(string word)
+        {
+            int wordCount = 0;
+
+            for (int i = 0; i < word.Length; i++)
+            {
+                if (char.IsWhiteSpace(word[i]))
+                {
+                    wordCount++;
+                }
+                if(i == word.Length-1)
+                {
+                    wordCount++;
+                }
+            }
+            
+
+
+            return wordCount;
+        }
 
     }
 }
